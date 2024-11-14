@@ -90,26 +90,26 @@ resource "google_compute_subnetwork" "subnet_avantia_weava_pri" {
   }
 
 
-  secondary_ip_range {
-    range_name    = "weava-pods-range"
-    ip_cidr_range = var.weava-pods-range
-  }
+  # secondary_ip_range {
+  #   range_name    = "weava-pods-range"
+  #   ip_cidr_range = var.weava-pods-range
+  # }
 
-  secondary_ip_range {
-    range_name    = "wecloud-app-pods-range"
-    ip_cidr_range = var.wecloud-app-pods-range
-  }
+  # secondary_ip_range {
+  #   range_name    = "wecloud-app-pods-range"
+  #   ip_cidr_range = var.wecloud-app-pods-range
+  # }
 
 
-  secondary_ip_range {
-    range_name    = "wecloud-classifiers-pods-range"
-    ip_cidr_range = var.wecloud-classifiers-pods-range
-  }
+  # secondary_ip_range {
+  #   range_name    = "wecloud-classifiers-pods-range"
+  #   ip_cidr_range = var.wecloud-classifiers-pods-range
+  # }
 
-  secondary_ip_range {
-    range_name    = "wecloud-box-pods-range"
-    ip_cidr_range = var.wecloud-box-pods-range
-  }
+  # secondary_ip_range {
+  #   range_name    = "wecloud-box-pods-range"
+  #   ip_cidr_range = var.wecloud-box-pods-range
+  # }
 
   depends_on = [google_compute_network.vpc_network_avantia_dev]
 }
