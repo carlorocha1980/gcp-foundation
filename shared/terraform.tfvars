@@ -17,6 +17,7 @@ project_folder_id = "value"
 # Define Enviroment ID #
 ########################
 env = "dev"
+prd_env = "prd"
 
 #######################################################
 # Set the Projects IDs for the different environments #

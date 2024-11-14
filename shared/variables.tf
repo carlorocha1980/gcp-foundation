@@ -31,6 +31,10 @@ variable "env" {
   description = "The name of the environment"
   type        = string
 }
+variable "prd_env" {
+  description = "The name of the environment"
+  type        = string
+}
 #######################################################
 # Set the Projects IDs for the different environments #
 #######################################################
