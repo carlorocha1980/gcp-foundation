@@ -30,7 +30,7 @@ variable "project_folder_id" {
 variable "env" {
   description = "The name of the environment"
   type        = string
- }
+}
 #######################################################
 # Set the Projects IDs for the different environments #
 #######################################################
@@ -79,69 +79,145 @@ variable "zone_03_id" {
 # Define the network and subnets names #
 ########################################
 # Link to IP distribuition list https://docs.google.com/spreadsheets/d/1Jtw4-wJaHHsyIf31eghvgcwIYUr_HuJy/edit?usp=sharing&ouid=100727001565538824661&rtpof=true&sd=true
-##########################################
-# Private Network Cluster VPC and Subnet #
-##########################################
 ################################################################################
-# Cluster network
+#######################
+# Cluster VPC Network #
+#######################
 variable "service_vpc_name" {
-  description = "The name of the network"
-  type        = string
-}
-variable "application_vpc_name" {
-  description = "The name of the network"
-  type        = string
-}
-#############################
-# Default Project CIRDs #
-variable "subnet_cidr_service_range" {
-  description = "The CIDR of the service subnet"
-  type        = string
-}
-variable "subnet_cidr_application_range" {
-  description = "The CIDR of the application subnet"
+  description = "The name of the VPC network"
   type        = string
 }
 ################################################################################
 # Cluster subnets
 variable "subnet_cluster_name" {
-  description = "The name of the service subnet"
+  description = "The name of the subnet"
   type        = string
 }
 variable "subnet_cidr_environment" {
-  description = "The CIDR of the service subnet"
+  description = "The CIDR of the subnet"
   type        = string
 }
-############################################################################
+################################################################################
 # Cluster subnets CIDR
-variable "subnet_cidr_cluster_range_control" {
-  description = "The CIDR of the service subnet"
+# Control CIDR Range
+variable "subnet_control_range" {
+  description = "The CIDR of the subnet"
   type        = string
 }
-variable "subnet_cidr_cluster_range_primary" {
-  description = "The CIDR of the service subnet"
+# Primary CIDR
+variable "wecloud-primary-range" {
+  description = "The CIDR of the subnet"
   type        = string
 }
-variable "subnet_cidr_cluster_range_secondary_services" {
-  description = "The CIDR of the application subnet"
+# Secondary CIDR
+variable "wecloud-pods-range" {
+  description = "The CIDR of the subnet"
   type        = string
 }
-variable "subnet_cidr_cluster_range_secondary_pods" {
-  description = "The Secondary CIDR to Cluster"
-  type = string
+variable "wecloud-services-range" {
+  description = "The CIDR of the subnet"
+  type        = string
 }
-variable "subnet_cidr_cluster_range_redis" {
-  description = "The CIDR of the service subnet"
+variable "weava-pods-range" {
+  description = "The CIDR of the subnet"
+  type        = string
+}
+variable "wecloud-app-pods-range" {
+  description = "The CIDR of the subnet"
+  type        = string
+}
+variable "wecloud-classifiers-pods-range" {
+  description = "The CIDR of the subnet"
+  type        = string
+}
+variable "wecloud-box-pods-range" {
+  description = "The CIDR of the subnet"
   type        = string
 }
 ############################################################################
-# Cluster Private Connection subnet CIDR
-variable "subnet_cidr_private_ip_address" {
-  description = "The CIDR of the private IP address"
+###################
+# GCE VPC Network #
+###################
+# Primary GCE Network
+variable "wecloud-pri-gce-name" {
+  description = "The name of the VPC network"
   type        = string
 }
-# Private Connection subnet mask length
-variable "ip_mask_length_private_ip_address" {
-  description = "The mask length of the private IP address"
+variable "wecloud-pri-gce-cidr" {
+  description = "The CIDR of the subnet"
+  type        = string
+}
+# Public GCE Network
+variable "wecloud-pub-gce-name" {
+  description = "The name of the VPC network"
+  type        = string
+}
+variable "wecloud-pub-gce-cidr" {
+  description = "The CIDR of the subnet"
+  type        = string
+}
+#######################
+# Endpont VPC Network #
+#######################
+# Primary Endpoint Network
+variable "wecloud-pri-endpoint-name" {
+  description = "The name of the VPC network"
+  type        = string
+}
+variable "wecloud-pri-endpoint-cidr" {
+  description = "The CIDR of the subnet"
+  type        = string
+}
+# Public Endpoint Network
+variable "wecloud-pub-enpoint-name" {
+  description = "The name of the VPC network"
+  type        = string
+}
+variable "wecloud-pub-endpoint-cidr" {
+  description = "The CIDR of the subnet"
+  type        = string
+}
+#########################
+# Functions VPC Network #
+#########################
+variable "wecloud-functions-name" {
+  description = "The name of the VPC network"
+  type        = string
+}
+variable "wecloud-functions-cidr" {
+  description = "The CIDR of the subnet"
+  type        = string
+}
+########################
+# CloudSQL VPC Network #
+########################
+variable "wecloud-cloudsql-name" {
+  description = "The name of the VPC network"
+  type        = string
+}
+variable "wecloud-cloudsql-cidr" {
+  description = "The CIDR of the subnet"
+  type        = string
+}
+#########################
+# VPN Peers VPC Network #
+#########################
+variable "wecloud-vpn-name" {
+  description = "The name of the VPC network"
+  type        = string
+}
+variable "wecloud-vpn-cidr" {
+  description = "The CIDR of the subnet"
+  type        = string
+}
+#####################
+# Redis VPC Network #
+#####################
+variable "wecloud-redis-name" {
+  description = "The name of the VPC network"
+  type        = string
+}
+variable "wecloud-redis-cidr" {
+  description = "The CIDR of the subnet"
   type        = string
 }

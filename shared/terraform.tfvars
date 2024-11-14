@@ -53,26 +53,66 @@ zone_03_id = "us-central1-f"
 #######################
 # Cluster VPC Network #
 #######################
-service_vpc_name = "service-vpc"
-application_vpc_name = "application-vpc"
-################################################################################
-# Default Project CIRDs #
-subnet_cidr_service_range = "10.192.0.0/20"
-subnet_cidr_application_range = "10.192.16.0/20"
+service_vpc_name = "avantia-infr-prod-gke-wecloud-cluster-pri-us-ce1-a-1"
 ################################################################################
 # Cluster subnets
-subnet_cluster_name = "cluster-vpc"
-subnet_cidr_environment = "10.192.0.0/10"
+subnet_cluster_name = "avantia-infr-prod-gke-wecloud-cluster-pri-us-ce1-a-1"
+subnet_cidr_environment = "10.242.0.0/17" # Only to Control and Firewall Rules
 ################################################################################
 # Cluster subnets CIDR
-subnet_cidr_cluster_range_primary            = "10.192.48.0/20"
-subnet_cidr_cluster_range_secondary_services = "10.192.64.0/20"
-subnet_cidr_cluster_range_secondary_pods     = "10.192.80.0/20"
-# Cluster subnets CIDR /28 Break 10.192.48.0/20 in /28 https://jodies.de/ipcalc?host=10.192.48.0&mask1=20&mask2=28
-subnet_cidr_cluster_range_control            = "10.192.96.0/28"
-subnet_cidr_cluster_range_redis              = "10.192.96.16/28"
+# Control CIDR Range
+subnet_control_range = "10.242.83.0/28"
+# Primary CIDR
+wecloud-primary-range = "10.242.0.0/22"
+# Secondary CIDR
+wecloud-pods-range = "10.242.4.0/22"
+wecloud-services-range = "10.242.8.0/21"
+weava-pods-range = "10.242.16.0/21"
+wecloud-app-pods-range = "10.242.24.0/22"
+wecloud-classifiers-pods-range = "10.242.28.0/22"
+wecloud-box-pods-range = "10.242.32.0/19"
 ############################################################################
-# Cluster Private Connection subnet CIDR
-subnet_cidr_private_ip_address = "10.192.32.0" # Private IP Address to Private Connetion
-# Cluster Private Connection subnet mask length
-ip_mask_length_private_ip_address = "20"
+
+###################
+# GCE VPC Network #
+###################
+# Primary GCE Network
+wecloud-pri-gce-name = "avantia-infr-prod-gce-wecloud-pri-us-ce1-1"
+wecloud-pri-gce-cidr = "10.242.64.0/22"
+# Public GCE Network
+wecloud-pub-gce-name = "avantia-infr-prod-gce-wecloud-pub-us-ce1-1"
+wecloud-pub-gce-cidr = "10.242.66.0/23"
+
+#######################
+# Endpont VPC Network #
+#######################
+# Primary Endpoint Network
+wecloud-pri-endpoint-name = "avantia-infr-prod-endpntsrvcs-wecloud-pri-us-ce1-1"
+wecloud-pri-endpoint-cidr = "10.242.68.0/23"
+# Public Endpoint Network
+wecloud-pub-enpoint-name = "avantia-infr-prod-endpntsrvcs-wecloud-pub-us-ce1-1"
+wecloud-pub-endpoint-cidr = "10.242.70.0/23"
+
+#########################
+# Functions VPC Network #
+#########################
+wecloud-functions-name = "avantia-infr-prod-functions-wecloud-pri-us-ce1-1"
+wecloud-functions-cidr = "10.242.72.0/21"
+
+########################
+# CloudSQL VPC Network #
+########################
+wecloud-cloudsql-name = "avantia-infr-prod-sql-wecloud-pri-us-ce1-1"
+wecloud-cloudsql-cidr = "10.242.80.0/24"
+
+#########################
+# VPN Peers VPC Network #
+#########################
+wecloud-vpn-name = "avantia-infr-prod-VPN-wecloud-pri-us-ce1-1"
+wecloud-vpn-cidr = "10.242.81.0/24"
+
+#####################
+# Redis VPC Network #
+#####################
+wecloud-redis-name = "avantia-infr-prod-redis-wecloud-pri-us-ce1-1"
+wecloud-redis-cidr = "10.242.82.0/24"
