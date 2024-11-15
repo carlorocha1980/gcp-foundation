@@ -69,47 +69,47 @@
 # Create a private google vpc subnet
 resource "google_compute_subnetwork" "subnet_avantia_weava_pri" {
   name          = var.subnet_cluster_name
-  description   = "Subnet for use of GKE from us-central1-a zone"
   project       = var.host_project_id
+  private_ipv6_google_access = "DISABLE_GOOGLE_ACCESS"
+  purpose = "PRIVATE"
+
   ip_cidr_range = var.wecloud-primary-range
   region        = var.region_id
+  
   stack_type       = "IPV4_ONLY"
-  private_ip_google_access = true
-  # ipv6_access_type = "INTERNAL" 
-  # Change to "EXTERNAL" if creating an external loadbalancer
 
   network = google_compute_network.vpc_network_avantia_dev.self_link
   secondary_ip_range {
-    range_name    = "wecloud-pods-range"
+    range_name    = "pods-range"
     ip_cidr_range = var.wecloud-pods-range
   }
 
   secondary_ip_range {
-    range_name    = "wecloud-services-range"
+    range_name    = "services-range"
     ip_cidr_range = var.wecloud-services-range
   }
 
 
-  # secondary_ip_range {
-  #   range_name    = "weava-pods-range"
-  #   ip_cidr_range = var.weava-pods-range
-  # }
+  secondary_ip_range {
+    range_name    = "weava-pods-range"
+    ip_cidr_range = var.weava-pods-range
+  }
 
-  # secondary_ip_range {
-  #   range_name    = "wecloud-app-pods-range"
-  #   ip_cidr_range = var.wecloud-app-pods-range
-  # }
+  secondary_ip_range {
+    range_name    = "wecloud-app-pods-range"
+    ip_cidr_range = var.wecloud-app-pods-range
+  }
 
 
-  # secondary_ip_range {
-  #   range_name    = "wecloud-classifiers-pods-range"
-  #   ip_cidr_range = var.wecloud-classifiers-pods-range
-  # }
+  secondary_ip_range {
+    range_name    = "wecloud-classifiers-pods-range"
+    ip_cidr_range = var.wecloud-classifiers-pods-range
+  }
 
-  # secondary_ip_range {
-  #   range_name    = "wecloud-box-pods-range"
-  #   ip_cidr_range = var.wecloud-box-pods-range
-  # }
+  secondary_ip_range {
+    range_name    = "wecloud-box-pods-range"
+    ip_cidr_range = var.wecloud-box-pods-range
+  }
 
   depends_on = [google_compute_network.vpc_network_avantia_dev]
 }
