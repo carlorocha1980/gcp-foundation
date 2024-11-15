@@ -31,15 +31,14 @@
 #                  ]
 # }
 
-
 resource "google_container_cluster" "avantia_pri_dev_gke" {
   name = "avantia-private-cluster-${var.env}"
-  project = local.avantia_service_project.service_project_name
+  project = local.projects.service_project.name
 
-  network    = local.lab_shared_vpc.avantia_vpc_id
-  subnetwork = local.dev_gke_subnets_us_central1-a.subnet_gke_avanuv_pri_name
+  network    = google_compute_network.vpc_network_avantia_dev.self_link
+  subnetwork = google_compute_subnetwork.subnet_avantia_weava_pri.self_link
 
-  location = var.zone_01_id
+  location = var.region_id
   enable_l4_ilb_subsetting = true
   initial_node_count = 1
 
@@ -52,22 +51,23 @@ resource "google_container_cluster" "avantia_pri_dev_gke" {
   private_cluster_config {
         enable_private_endpoint = true
         enable_private_nodes    = true
-        master_ipv4_cidr_block  = var.subnet_cidr_cluster_range_control
+        master_ipv4_cidr_block  = var.subnet_control_range
     } 
 
   ip_allocation_policy {
     stack_type = "IPV4"
-    services_secondary_range_name   = local.dev_gke_subnets_us_central1-a.subnet_gke_avanuv_pri_name_services_range
-    cluster_secondary_range_name    = local.dev_gke_subnets_us_central1-a.subnet_gke_avanuv_pri_name_pod_range
+    services_secondary_range_name   = google_compute_subnetwork.subnet_avantia_weava_pri.secondary_ip_range[0].range_name
+    cluster_secondary_range_name    = google_compute_subnetwork.subnet_avantia_weava_pri.secondary_ip_range[1].range_name
+    # cluster_secondary_range_name    = google_compute_subnetwork.subnet_avantia_weava_pri.secondary_ip_range[2].range_name
   }
 
   workload_identity_config {
-    workload_pool = "${local.avantia_service_project.service_project_name}.svc.id.goog"
+    workload_pool = "${local.projects.service_project.name}.svc.id.goog"
   }
 
     master_authorized_networks_config {
     cidr_blocks {
-      cidr_block    = var.cidr_block
+      cidr_block    = var.subnet_cidr_environment
       display_name = "subnet_gke_avanuv_pri_name"
     }
   }

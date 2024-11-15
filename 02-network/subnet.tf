@@ -79,16 +79,16 @@ resource "google_compute_subnetwork" "subnet_avantia_weava_pri" {
   stack_type       = "IPV4_ONLY"
 
   network = google_compute_network.vpc_network_avantia_dev.self_link
-  secondary_ip_range {
-    range_name    = "pods-range"
-    ip_cidr_range = var.wecloud-pods-range
-  }
-
+  
   secondary_ip_range {
     range_name    = "services-range"
     ip_cidr_range = var.wecloud-services-range
   }
-
+  
+  secondary_ip_range {
+    range_name    = "pods-range"
+    ip_cidr_range = var.wecloud-pods-range
+  }
 
   secondary_ip_range {
     range_name    = "weava-pods-range"
