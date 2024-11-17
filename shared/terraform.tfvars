@@ -124,3 +124,85 @@ wecloud-vpn-cidr = "10.242.81.0/24"
 #####################
 # wecloud-redis-name = "avantia-infr-prod-redis-wecloud-pri-us-ce1-1"
 # wecloud-redis-cidr = "10.242.82.0/24"
+
+###################
+# DEV VPC Network #
+###################
+########################################
+# Define the network and subnets names #
+########################################
+# Link to IP distribuition list https://docs.google.com/spreadsheets/d/1Jtw4-wJaHHsyIf31eghvgcwIYUr_HuJy/edit?usp=sharing&ouid=100727001565538824661&rtpof=true&sd=true
+################################################################################
+#######################
+# Cluster VPC Network #
+#######################
+service_dev_vpc_name = "avantia-infr-dev-gke-wecloud-defaultnodepod-pri-us-ce1-1"
+################################################################################
+# Cluster subnets
+subnet_dev_cluster_name = "avantia-infr-dev-gke-wecloud-defaultnodepod-pri-us-ce1-1"
+subnet_dev_cidr_environment = "10.243.0.0/18" # Only to Control and Firewall Rules
+################################################################################
+# Cluster subnets CIDR
+# Control CIDR Range
+subnet_dev_control_name = "avantia-infr-dev-gke-wecloud-controlplane-pri-us-ce1-1"
+subnet_dev_control_range = "10.243.40.0/28"
+# Primary CIDR
+wecloud-dev-node-pools-name  = "avantia-infr-dev-gke-wecloud-defaultnodepod-pri-us-ce1-1"
+wecloud-dev-node-pools-range = "10.243.0.0/23"
+# Secondary CIDR
+wecloud-dev-default-pods-name = "avantia-infr-dev-gke-wecloud-defaultpod-pri-us-ce1-1"
+wecloud-dev-default-pods-range = "10.243.2.0/24"
+
+wecloud-dev-app-name = "avantia-infr-dev-gke-wecloud-app-pri-us-ce1-1"
+wecloud-dev-app-range = "10.242.3.0/24"
+
+weava-dev-default-services-name  = "avantia-infr-dev-gke-wecloud-defaultservice-pri-us-ce1-1"
+weava-dev-default-services-range = "10.243.4.0/22"
+
+wecloud-dev-hoint-pods-name  = "avantia-infr-dev-gke-wecloud-weavahoint-pri-us-ce1-1"
+wecloud-dev-hoint-pods-range = "10.243.8.0/23"
+
+wecloud-dev-box-pods-name  = "avantia-infr-dev-gke-wecloud-box-pri-us-ce1-1"
+wecloud-dev-box-pods-range = "10.243.10.0/23"
+
+wecloud-dev-pods-name  = "avantia-infr-dev-gke-nextvision-boxpod-pri-us-ce1-1"
+wecloud-dev-pods-range = "10.243.13.0/24"
+############################################################################
+
+###################
+# GCE VPC Network #
+###################
+# Primary GCE Network
+wecloud-dev-pri-gce-name = "avantia-infr-dev-gce-wecloud-pri-us-ce1-1"
+wecloud-dev-pri-gce-cidr = "10.243.14.0/24"
+# Public GCE Network
+wecloud-dev-pub-gce-name = "avantia-infr-dev-gce-wecloud-pub-us-ce1-1"
+wecloud-dev-pub-gce-cidr = "10.243.15.0/24"
+
+#######################
+# Endpont VPC Network #
+#######################
+# Primary Endpoint Network
+wecloud-dev-pri-endpoint-name = "avantia-infr-dev-endpntsrvcs-pri-us-ce1-1"
+wecloud-dev-pri-endpoint-cidr = "10.243.16.0/24"
+# Public Endpoint Network
+wecloud-dev-pub-enpoint-name = "avantia-infr-dev-endpntsrvcs-pub-us-ce1-1"
+wecloud-dev-pub-enpoint-cidr = "10.243.17.0/24"
+
+#########################
+# Functions VPC Network #
+#########################
+wecloud-dev-functions-name = "avantia-infr-dev-functions-pri-us-ce1-1"
+wecloud-dev-functions-cidr = "10.243.18.0/23"
+
+########################
+# CloudSQL VPC Network #
+########################
+wecloud-dev-cloudsql-name = "avantia-infr-dev-cloudsql-pri-us-ce1-1"
+wecloud-dev-cloudsql-cidr = "10.243.20.0/24"
+
+#########################
+# VPN Peers VPC Network #
+#########################
+wecloud-dev-vpn-name = "avantia-infr-dev-vpnpeersrvcs-pub-us-ce1-1"
+wecloud-dev-vpn-cidr = "10.243.21.0/24"
