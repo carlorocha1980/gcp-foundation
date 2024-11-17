@@ -66,11 +66,17 @@ subnet_control_range = "10.242.83.0/28"
 # Primary CIDR
 wecloud-primary-range = "10.242.0.0/22"
 # Secondary CIDR
+wecloud-pods-name = "avantia-infr-prod-gke-wecloud-defaultpod-pri-us-ce1-1"
 wecloud-pods-range = "10.242.4.0/22"
+wecloud-services-name = "avantia-infr-prod-gke-wecloud-defaultservice-pri-us-ce1-1"
 wecloud-services-range = "10.242.8.0/21"
+weava-pods-name  = "avantia-infr-prod-gke-wecloud-weavaintpod-pri-us-ce1-1"
 weava-pods-range = "10.242.16.0/21"
+wecloud-app-pods-name  = "avantia-infr-prod-gke-wecloud-wecloudpod-pri-us-ce1-1"
 wecloud-app-pods-range = "10.242.24.0/22"
+wecloud-classifiers-pods-name  = "avantia-infr-prod-gke-wecloud-classfierspod-pri-us-ce1-1"
 wecloud-classifiers-pods-range = "10.242.28.0/22"
+wecloud-box-pods-name  = "avantia-infr-prod-gke-wecloud-boxpod-pri-us-ce1-1"
 wecloud-box-pods-range = "10.242.32.0/19"
 ############################################################################
 
@@ -79,7 +85,7 @@ wecloud-box-pods-range = "10.242.32.0/19"
 ###################
 # Primary GCE Network
 wecloud-pri-gce-name = "avantia-infr-prod-gce-wecloud-pri-us-ce1-1"
-wecloud-pri-gce-cidr = "10.242.64.0/22"
+wecloud-pri-gce-cidr = "10.242.64.0/23"
 # Public GCE Network
 wecloud-pub-gce-name = "avantia-infr-prod-gce-wecloud-pub-us-ce1-1"
 wecloud-pub-gce-cidr = "10.242.66.0/23"
@@ -109,11 +115,11 @@ wecloud-cloudsql-cidr = "10.242.80.0/24"
 #########################
 # VPN Peers VPC Network #
 #########################
-wecloud-vpn-name = "avantia-infr-prod-VPN-wecloud-pri-us-ce1-1"
+wecloud-vpn-name = "avantia-infr-prod-vpn-wecloud-pri-us-ce1-1"
 wecloud-vpn-cidr = "10.242.81.0/24"
 
 #####################
 # Redis VPC Network #
 #####################
-wecloud-redis-name = "avantia-infr-prod-redis-wecloud-pri-us-ce1-1"
-wecloud-redis-cidr = "10.242.82.0/24"
+# wecloud-redis-name = "avantia-infr-prod-redis-wecloud-pri-us-ce1-1"
+# wecloud-redis-cidr = "10.242.82.0/24"

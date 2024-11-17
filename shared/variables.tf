@@ -113,6 +113,31 @@ variable "wecloud-primary-range" {
   description = "The CIDR of the subnet"
   type        = string
 }
+# Secondary Names
+variable "wecloud-pods-name" {
+  description = "The name of the secondary CIDR"
+  type        = string
+}
+variable "wecloud-services-name" {
+  description = "The name of the secondary CIDR"
+  type        = string
+}
+variable "weava-pods-name" {
+  description = "The name of the secondary CIDR"
+  type        = string
+}
+variable "wecloud-app-pods-name" {
+  description = "The name of the secondary CIDR"
+  type        = string
+}
+variable "wecloud-classifiers-pods-name" {
+  description = "The name of the secondary CIDR"
+  type        = string
+}
+variable "wecloud-box-pods-name" {
+  description = "The name of the secondary CIDR"
+  type        = string
+}
 # Secondary CIDR
 variable "wecloud-pods-range" {
   description = "The CIDR of the subnet"
@@ -217,11 +242,11 @@ variable "wecloud-vpn-cidr" {
 #####################
 # Redis VPC Network #
 #####################
-variable "wecloud-redis-name" {
-  description = "The name of the VPC network"
-  type        = string
-}
-variable "wecloud-redis-cidr" {
-  description = "The CIDR of the subnet"
-  type        = string
-}
+# variable "wecloud-redis-name" {
+#   description = "The name of the VPC network"
+#   type        = string
+# }
+# variable "wecloud-redis-cidr" {
+#   description = "The CIDR of the subnet"
+#   type        = string
+# }
