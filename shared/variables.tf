@@ -114,6 +114,10 @@ variable "wecloud-primary-range" {
   type        = string
 }
 # Secondary Names
+variable "subnet_control_name" {
+  description = "The CIDR of the subnet"
+  type        = string
+}
 variable "wecloud-pods-name" {
   description = "The name of the secondary CIDR"
   type        = string

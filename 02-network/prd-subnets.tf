@@ -168,3 +168,17 @@ output "shared_vpc_vpn_peer_srvcs_pri" {
 # output "shared_vpc_redis_pri" {
 #   value = google_compute_subnetwork.shared_vpc_redis_pri.self_link
 # }
+resource "google_compute_subnetwork" "shared_vpc_cluster_control_range_pri" {
+  name          = var.subnet_control_name
+  project       = var.host_project_id
+  ip_cidr_range = var.subnet_control_range
+  region        = var.region_id
+  stack_type       = "IPV4_ONLY"
+  private_ip_google_access = true
+  network = google_compute_network.vpc_network_avantia_prd.id
+
+  depends_on = [google_compute_network.vpc_network_avantia_prd]
+}
+output "shared_vpc_cluster_control_range_pri" {
+  value = google_compute_subnetwork.shared_vpc_cluster_control_range_pri.self_link
+}

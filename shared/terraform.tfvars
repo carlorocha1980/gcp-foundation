@@ -62,6 +62,7 @@ subnet_cidr_environment = "10.242.0.0/17" # Only to Control and Firewall Rules
 ################################################################################
 # Cluster subnets CIDR
 # Control CIDR Range
+subnet_control_name = "avantia-infr-prod-gke-wecloud-cluster-cp-pri-us-ce1-a-1"
 subnet_control_range = "10.242.83.0/28"
 # Primary CIDR
 wecloud-primary-range = "10.242.0.0/22"
