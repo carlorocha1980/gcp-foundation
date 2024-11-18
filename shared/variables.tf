@@ -422,3 +422,170 @@ variable "wecloud-dev-vpn-cidr" {
   description = "The CIDR of the subnet"
   type        = string
 }
+
+###################
+# STG VPC Network #
+###################
+#######################
+# Cluster VPC Network #
+#######################
+variable "service_stg_vpc_name" {
+  description = "The name of the VPC network"
+  type        = string
+}
+################################################################################
+# Cluster subnets
+variable "subnet_stg_cluster_name" {
+  description = "The name of the subnet"
+  type        = string
+}
+variable "subnet_stg_cidr_environment" {
+  description = "The CIDR of the subnet"
+  type        = string
+}
+################################################################################
+# Cluster subnets CIDR
+# Control CIDR Range
+variable "subnet_stg_control_range" {
+  description = "The CIDR of the subnet"
+  type        = string
+}
+variable "subnet_stg_control_name" {
+  description = "The CIDR of the subnet"
+  type        = string
+}
+# Primary CIDR
+variable "wecloud-stg-node-pools-range" {
+  description = "The CIDR of the subnet"
+  type        = string
+}
+variable "wecloud-stg-node-pools-name" {
+  description = "The CIDR of the subnet"
+  type        = string
+}
+# Secondary Names
+variable "wecloud-stg-default-pods-name" {
+  description = "The CIDR of the subnet"
+  type        = string
+}
+variable "wecloud-stg-app-name" {
+  description = "The name of the secondary CIDR"
+  type        = string
+}
+variable "weava-stg-default-services-name" {
+  description = "The name of the secondary CIDR"
+  type        = string
+}
+variable "wecloud-stg-hoint-pods-name" {
+  description = "The name of the secondary CIDR"
+  type        = string
+}
+variable "wecloud-stg-box-pods-name" {
+  description = "The name of the secondary CIDR"
+  type        = string
+}
+variable "wecloud-stg-pods-name" {
+  description = "The name of the secondary CIDR"
+  type        = string
+}
+# Secondary CIDR
+variable "wecloud-stg-default-pods-range" {
+  description = "The CIDR of the subnet"
+  type        = string
+}
+variable "wecloud-stg-app-range" {
+  description = "The CIDR of the subnet"
+  type        = string
+}
+variable "weava-stg-default-services-range" {
+  description = "The CIDR of the subnet"
+  type        = string
+}
+variable "wecloud-stg-hoint-pods-range" {
+  description = "The CIDR of the subnet"
+  type        = string
+}
+variable "wecloud-stg-box-pods-range" {
+  description = "The CIDR of the subnet"
+  type        = string
+}
+variable "wecloud-stg-pods-range" {
+  description = "The CIDR of the subnet"
+  type        = string
+}
+############################################################################
+###################
+# GCE VPC Network #
+###################
+# Primary GCE Network
+variable "wecloud-stg-pri-gce-name" {
+  description = "The name of the VPC network"
+  type        = string
+}
+variable "wecloud-stg-pri-gce-cidr" {
+  description = "The CIDR of the subnet"
+  type        = string
+}
+# Public GCE Network
+variable "wecloud-stg-pub-gce-name" {
+  description = "The name of the VPC network"
+  type        = string
+}
+variable "wecloud-stg-pub-gce-cidr" {
+  description = "The CIDR of the subnet"
+  type        = string
+}
+#######################
+# Endpont VPC Network #
+#######################
+# Primary Endpoint Network
+variable "wecloud-stg-pri-endpoint-name" {
+  description = "The name of the VPC network"
+  type        = string
+}
+variable "wecloud-stg-pri-endpoint-cidr" {
+  description = "The CIDR of the subnet"
+  type        = string
+}
+# Public Endpoint Network
+variable "wecloud-stg-pub-enpoint-name" {
+  description = "The name of the VPC network"
+  type        = string
+}
+variable "wecloud-stg-pub-enpoint-cidr" {
+  description = "The CIDR of the subnet"
+  type        = string
+}
+#########################
+# Functions VPC Network #
+#########################
+variable "wecloud-stg-functions-name" {
+  description = "The name of the VPC network"
+  type        = string
+}
+variable "wecloud-stg-functions-cidr" {
+  description = "The CIDR of the subnet"
+  type        = string
+}
+########################
+# CloudSQL VPC Network #
+########################
+variable "wecloud-stg-cloudsql-name" {
+  description = "The name of the VPC network"
+  type        = string
+}
+variable "wecloud-stg-cloudsql-cidr" {
+  description = "The CIDR of the subnet"
+  type        = string
+}
+#########################
+# VPN Peers VPC Network #
+#########################
+variable "wecloud-stg-vpn-name" {
+  description = "The name of the VPC network"
+  type        = string
+}
+variable "wecloud-stg-vpn-cidr" {
+  description = "The CIDR of the subnet"
+  type        = string
+}

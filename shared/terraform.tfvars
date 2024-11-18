@@ -206,3 +206,85 @@ wecloud-dev-cloudsql-cidr = "10.243.20.0/24"
 #########################
 wecloud-dev-vpn-name = "avantia-infr-dev-vpnpeersrvcs-pub-us-ce1-1"
 wecloud-dev-vpn-cidr = "10.243.21.0/24"
+
+###################
+# STG VPC Network #
+###################
+########################################
+# Define the network and subnets names #
+########################################
+# Link to IP distribuition list https://docs.google.com/spreadsheets/d/1Jtw4-wJaHHsyIf31eghvgcwIYUr_HuJy/edit?usp=sharing&ouid=100727001565538824661&rtpof=true&sd=true
+################################################################################
+#######################
+# Cluster VPC Network #
+#######################
+service_stg_vpc_name = "avantia-infr-stg-gke-wecloud-defaultnodepod-pri-us-ce1-1"
+################################################################################
+# Cluster subnets
+subnet_stg_cluster_name = "avantia-infr-stg-gke-wecloud-defaultnodepod-pri-us-ce1-1"
+subnet_stg_cidr_environment = "10.243.64.0/18" # Only to Control and Firewall Rules
+################################################################################
+# Cluster subnets CIDR
+# Control CIDR Range
+subnet_stg_control_name = "avantia-infr-stg-gke-wecloud-controlplane-pri-us-ce1-1"
+subnet_stg_control_range = "10.243.40.16/28"
+# Primary CIDR
+wecloud-stg-node-pools-name  = "avantia-infr-stg-gke-wecloud-defaultnodepod-pri-us-ce1-1"
+wecloud-stg-node-pools-range = "10.243.22.0/23"
+# Secondary CIDR
+wecloud-stg-default-pods-name = "avantia-infr-stg-gke-wecloud-defaultpod-pri-us-ce1-1"
+wecloud-stg-default-pods-range = "10.243.24.0/24"
+
+wecloud-stg-app-name = "avantia-infr-stg-gke-wecloud-app-pri-us-ce1-1"
+wecloud-stg-app-range = "10.243.25.0/24"
+
+weava-stg-default-services-name  = "avantia-infr-stg-gke-wecloud-defaultservice-pri-us-ce1-1"
+weava-stg-default-services-range = "10.243.28.0/22"
+
+wecloud-stg-hoint-pods-name  = "avantia-infr-stg-gke-wecloud-weavahoint-pri-us-ce1-1"
+wecloud-stg-hoint-pods-range = "10.243.32.0/23"
+
+wecloud-stg-box-pods-name  = "avantia-infr-stg-gke-wecloud-box-pri-us-ce1-1"
+wecloud-stg-box-pods-range = "10.243.34.0/23"
+
+wecloud-stg-pods-name  = "avantia-infr-stg-gke-nextvision-boxpod-pri-us-ce1-1"
+wecloud-stg-pods-range = "10.243.36.0/24"
+############################################################################
+
+###################
+# GCE VPC Network #
+###################
+# Primary GCE Network
+wecloud-stg-pri-gce-name = "avantia-infr-stg-gce-wecloud-pri-us-ce1-1"
+wecloud-stg-pri-gce-cidr = "10.243.38.0/24"
+# Public GCE Network
+wecloud-stg-pub-gce-name = "avantia-infr-stg-gce-wecloud-pub-us-ce1-1"
+wecloud-stg-pub-gce-cidr = "10.243.39.0/24"
+
+#######################
+# Endpont VPC Network #
+#######################
+# Primary Endpoint Network
+wecloud-stg-pri-endpoint-name = "avantia-infr-stg-endpntsrvcs-pri-us-ce1-1"
+wecloud-stg-pri-endpoint-cidr = "10.243.41.0/24"
+# Public Endpoint Network
+wecloud-stg-pub-enpoint-name = "avantia-infr-stg-endpntsrvcs-pub-us-ce1-1"
+wecloud-stg-pub-enpoint-cidr = "10.243.42.0/24"
+
+#########################
+# Functions VPC Network #
+#########################
+wecloud-stg-functions-name = "avantia-infr-stg-functions-pri-us-ce1-1"
+wecloud-stg-functions-cidr = "10.243.44.0/23"
+
+########################
+# CloudSQL VPC Network #
+########################
+wecloud-stg-cloudsql-name = "avantia-infr-stg-cloudsql-pri-us-ce1-1"
+wecloud-stg-cloudsql-cidr = "10.243.46.0/24"
+
+#########################
+# VPN Peers VPC Network #
+#########################
+wecloud-stg-vpn-name = "avantia-infr-stg-vpnpeersrvcs-pub-us-ce1-1"
+wecloud-stg-vpn-cidr = "10.243.47.0/24"
